@@ -1,12 +1,15 @@
 body {
-    background: hsla(240, 2%, 12%, 0.785);
+    background: url('../img/fundo-fotografico-em-tecido-paisagem-2-80x1-50m-painel-bolo.jpg') no-repeat;
+    background-size: cover;
+    
+
 #container{
     background-color: rgb(288, 3%, 35%, 0.323);
     border: 3px solid;
     border-radius: 15px;
     max-width: 400px;
     margin: auto;
-    background-color: rgba(195, 193, 197, 0.361);
+    background-color: rgba(139, 137, 141, 0.259);
     padding: 70px;
     text-align: center;
 }
@@ -15,7 +18,8 @@ body {
     /* Espaçamento dentro do elemento */
     padding: 15px;
     /* tamanho do texto */
-    font-size: 30px;
+    font-size: 45px;
+    font-family: 'Times New Roman', Times, serif;
 }
 #Minhas-tarefas{
     border: 2px solid rgb(0, 0, 0);
@@ -23,9 +27,17 @@ body {
     border-radius: 5px;
     outline: none;
     color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
 
 }
 #Pesquise-aqui::placeholder{
-    color: black;
+    color: rgb(0, 0, 0);
+}
+.btn-adicionar{
+    background-color: rgba(4, 255, 46, 0.781);
+    padding: 8px;
+    border: 0px;
+    border-radius: 8px;
+   
 }
 }
