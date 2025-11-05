@@ -1,0 +1,31 @@
+body {
+    background: hsla(240, 2%, 12%, 0.785);
+#container{
+    background-color: rgb(288, 3%, 35%, 0.323);
+    border: 3px solid;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: auto;
+    background-color: rgba(195, 193, 197, 0.361);
+    padding: 70px;
+    text-align: center;
+}
+#container h1 {
+    color: rgb(0, 0, 0);
+    /* Espaçamento dentro do elemento */
+    padding: 15px;
+    /* tamanho do texto */
+    font-size: 30px;
+}
+#Minhas-tarefas{
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(0, 0, 0);
+
+}
+#Pesquise-aqui::placeholder{
+    color: black;
+}
+}
