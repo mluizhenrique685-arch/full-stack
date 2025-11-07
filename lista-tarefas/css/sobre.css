@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url('../img/fundobranco') no-repeat;
+    background-size: cover;
+}
+
+.container{
+    background: rgba(0, 0, 0, 0.103);
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    border: 3px solid;
+    border-radius: 40px;
+    padding: 40px;
+}
+.container h1{
+    padding: 30px;
+    color: rgb(181, 167, 150);
+    background-color: rgba(38, 37, 37, 0.153);
+    border: 3px solid black;
+    border-radius: 12px;
+}
+.links a {
+    padding: 18px;
+    display: block;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgb(181, 167, 150);
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: brown;
+    border: black;
+
+   
+
+}
+.sobre-mim{
+    color: rgb(181, 167, 150);
+}
+#Meus-interesses{
+    color: rgb(181, 167, 150);
+}
