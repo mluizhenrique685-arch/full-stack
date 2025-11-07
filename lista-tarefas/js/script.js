@@ -1,5 +1,5 @@
 // Função em JavaScript
 function adicionar() {
-    alert("Olá Luiz");
-    console.log("Olá luiz");
+    let tarefa = document.getElementById("tarefa");
+    console.log(tarefa.value);
 }
