@@ -1,8 +1,11 @@
 let numero = Number (prompt("Digite seu numero"));
  
 if (numero > 0){
-    alert("Maior que zero ")
+    alert("Numero é positivo")
+}
+else if (numero < 0){
+    alert("Numero negativo")
 }
 else {
-    alert("Menor ou igual a zero")
+    alert("Igual a zero")
 }
