@@ -12,12 +12,12 @@ document.write(mensagem + pontos);
 
 if (pontos > 10){
 
-  mostra (Number("Seu time está indo bem"));
+  mostra ("Seu time está indo bem");
 
   }
 else if (pontos < 5){
  
-  mostra (Number("Seu time precisa melhorar"));
+  mostra ("Seu time precisa melhorar");
 
 }
 mostra()
