@@ -1,10 +1,9 @@
 let eleições = Number(prompt("Digite a primeira eleição que você viu"));
-let anoAtual = new Date().getFullYear();
+let anoAtual = 2025;
 
 while(eleições <= anoAtual) {
 
-    let tipoAno = (anoInicio % 2 === 0) ? "ano par" : "ano impar";
-    document.write("eleição de: " + eleições + "<hr>" + tipoAno + "<br>");
+    document.write("eleição de: " + eleições + "<br>");
 
     eleições = eleições + 2;
 
