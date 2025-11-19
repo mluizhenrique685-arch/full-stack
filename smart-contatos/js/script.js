@@ -17,7 +17,17 @@ if(listaMsg ) {
 }
 
 
+const btnExcluir = document.createElement("button");
+btnExcluir.textContent = "Excluir";
+btnExcluir.className = "btn-delete";
+
+
+
 const li = document.createElement("li");
+
+btnExcluir.addEventListener("click", function(){
+alert("teste");
+});
 
 li.innerHTML = `
   <span class="contato-Nome">${inputNome.value}</span>
@@ -27,6 +37,8 @@ li.innerHTML = `
 
 console.log(li)
 lista.appendChild(li)
+li.appendChild(btnExcluir)
+
 form.reset();
 
 });
