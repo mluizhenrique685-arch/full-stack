@@ -3,6 +3,7 @@ const lista = document.querySelector(".lista")
 const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputTelefone = document.getElementById("telefone")
+const listaMsg = document.querySelector(".lista-msg");
 form.addEventListener("submit", function(event) {
 event.preventDefault();
 
@@ -10,6 +11,9 @@ if(inputNome.value == "" || inputEmail.value == "" || inputTelefone.value == "" 
     alert("Digite seus dados");
     return false;
 
+}
+if(listaMsg ) {
+ listaMsg.remove();
 }
 
 
