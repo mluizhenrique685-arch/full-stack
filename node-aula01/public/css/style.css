@@ -1,0 +1,17 @@
+body{
+    background-image: url('./public/img/fundo.jpg');
+}
+
+.h1{
+    text-align: center;
+    color: brown;
+    border: 10px;
+    border-radius: 50px;
+}
+
+.imagem{
+
+    text-align: center;
+    border: 10px;
+    border-radius: 50px;
+   }
