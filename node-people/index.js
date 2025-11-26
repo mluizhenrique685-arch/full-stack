@@ -8,6 +8,16 @@ const nomes = [
   { id: 4, nome: "Samuel", idade: "45" },
   { id: 5, nome: "Doris", idade: "33" },
 ];
+    //Criando funções auxiliares
+    //Retornar o objeto por id
+        function buscarNomePorId(id){
+            return nomes.filter((nomes) => nomes.id == id)
+        };
+
+        app.get("/", (req, res) => {
+            res.send("Olá essa é a rota principal")
+        });
+
     app.get("/teste", (req, res) => {
         res.send("API nodePeople está funcionando!");
     });
@@ -16,6 +26,12 @@ const nomes = [
         console.log(`Servidor rodando no endereço http://localhost:${port}`);
     }); 
 
-    app.get("/nomes", (req, res) => {
+    app.get("/nome", (req, res) => {
         res.send(nomes)
     });
+        //Buscando por id 
+        app.get("/nome/:id", (req, res) => {
+            let index = req.params.id;
+
+            res.json(buscarNomePorId(index))
+        });
