@@ -1,17 +1,38 @@
 body{
-    background-image: url('./public/img/fundo.jpg');
+
+    background: url('/public/img/360_F_830085602_Ypk79BgCp5dmgAhOa7isEgsN1IXbLpQN.jpg');
+    padding: 30px;
+
 }
 
 .h1{
     text-align: center;
-    color: brown;
-    border: 10px;
+    color: rgb(0, 0, 0);
+    border: 3px solid;
     border-radius: 50px;
+    border-color: black;
+    padding: 25px;
 }
 
 .imagem{
 
-    text-align: center;
-    border: 10px;
-    border-radius: 50px;
+    display: block;
+    margin: auto;
+    border: 3px solid;
+    border-radius: 30px;
+    filter: drop-shadow(5px 5px 5px black);
+    padding: 20px;
    }
+
+.sla{
+    display: block;
+    margin: auto;
+    border: 3px solid;
+    border-radius: 50px;
+    filter: drop-shadow(5px 5px 5px black);
+    padding: 30px;
+}
+
+.bg{
+    display: inline-block;
+}
