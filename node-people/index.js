@@ -13,6 +13,14 @@ const nomes = [
         function buscarNomePorId(id){
             return nomes.filter((nomes) => nomes.id == id)
         };
+    //pegar a posição ou index do elemento do array por id
+        function buscarIdNome(id){
+            return nomes.findIndex((nome) => nome.id == id);
+        };
+
+
+
+    //Rota principal
 
         app.get("/", (req, res) => {
             res.send("Olá essa é a rota principal")
@@ -34,4 +42,12 @@ const nomes = [
             let index = req.params.id;
 
             res.json(buscarNomePorId(index))
+        });
+
+        //Criando rota excluir
+
+        app.delete("/nome/:id", (req, res) => {
+            let index = buscarIdNome (req.params.id);
+            nomes.splice(index, 1);
+            res.send(`Nomes com id ${req.params.id} excluida com sucesso`);
         });
