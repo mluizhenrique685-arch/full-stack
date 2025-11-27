@@ -44,6 +44,15 @@ const nomes = [
             res.json(buscarNomePorId(index))
         });
 
+
+        //Criando Post para cadastrar
+        app.post("/nome", (req, res) => {
+            nomes.push(req.body);
+            res.status(201).send("Nome cadastrado com sucesso");
+        });
+
+
+
         //Criando rota excluir
 
         app.delete("/nome/:id", (req, res) => {
