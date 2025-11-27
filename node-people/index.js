@@ -1,6 +1,25 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+
+
+//Indicar para express ler body com json
+app.use(express.json());
+
+
+
+const times = [
+  { id: 1, nomes: "Corinthians", estado: "SP", titulos: 7 },
+  { id: 2, nomes: "Palmeiras", estado: "SP", titulos: 11 },
+  { id: 3, nomes: "Santos", estado: "SP", titulos: 8 },
+  { id: 4, nomes: "Flamengo", estado: "RJ", titulos: 7 },
+  { id: 5, nomes: "Vasco", estado: "RJ", titulos: 4 },
+  { id: 6, nomes: "Atlético Mineiro", estado: "MG", titulos: 3 },
+  { id: 7, nomes: "Cruzeiro", estado: "MG", titulos: 4 },
+];
+
+
+
 const nomes = [
   { id: 1, nome: "Fernanda", idade: "18" },
   { id: 2, nome: "Caio", idade: "23" },
@@ -13,9 +32,19 @@ const nomes = [
         function buscarNomePorId(id){
             return nomes.filter((nomes) => nomes.id == id)
         };
+
+        function buscarTimesPorID(id){
+            return times.filter((nomes) => nomes.id == id)
+        };
+
+
     //pegar a posição ou index do elemento do array por id
         function buscarIdNome(id){
             return nomes.findIndex((nome) => nome.id == id);
+        };
+
+        function buscarIdTimes(id){
+            return times.findIndex((nomes) => nomes.id == id);
         };
 
 
@@ -37,6 +66,14 @@ const nomes = [
     app.get("/nome", (req, res) => {
         res.send(nomes)
     });
+
+    //adicionando times
+    app.get("/times", (req, res) => {
+        res.send(times)
+    });
+
+
+
         //Buscando por id 
         app.get("/nome/:id", (req, res) => {
             let index = req.params.id;
@@ -44,11 +81,27 @@ const nomes = [
             res.json(buscarNomePorId(index))
         });
 
+        //buscando por id na times
+        app.get("/times/:id", (req, res) => {
+            let index = req.params.id;
+
+            res.json(buscarTimesPorID(index))
+        });
+
+
+
+
 
         //Criando Post para cadastrar
         app.post("/nome", (req, res) => {
             nomes.push(req.body);
             res.status(201).send("Nome cadastrado com sucesso");
+        });
+
+        //Criando Post para cadastrar os times
+        app.post("/times", (req, res) => {
+            times.push(req.body);
+            res.status(201).send("Time cadastrado com sucesso");
         });
 
 
@@ -60,3 +113,11 @@ const nomes = [
             nomes.splice(index, 1);
             res.send(`Nomes com id ${req.params.id} excluida com sucesso`);
         });
+
+        app.delete("/times/:id", (req, res) => {
+            let index = buscarIdTimes (req.params.id);
+            times.splice(index, 1);
+            res.send(`Time com id ${req.params.id} excluido com sucesso`);
+        });
+
+        
