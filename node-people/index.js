@@ -115,9 +115,16 @@ const nomes = [
         });
 
         app.delete("/times/:id", (req, res) => {
-            let index = buscarIdTimes (req.params.id);
+            let id = req.params.id;
+            let index = buscarIdTimes(id);
+
+            //Se não encontrar, retorna erro
+            if (index === -1){
+                return res.status(404).send(`Nenhum time com id ${id} foi encontrado`)
+            }
+
+            
             times.splice(index, 1);
             res.send(`Time com id ${req.params.id} excluido com sucesso`);
         });
-
         
