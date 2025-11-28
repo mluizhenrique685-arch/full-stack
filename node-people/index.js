@@ -127,4 +127,21 @@ const nomes = [
             times.splice(index, 1);
             res.send(`Time com id ${req.params.id} excluido com sucesso`);
         });
+
+        //Rota alterar
+        app.put("/nome/:id", (req, res) => {
+            let index = buscarIdNome(req.params.id);
+            nomes[index].nome = req.body.nome;
+            nomes[index].idade = req.body.idade;
+
+            res.json(nomes);
+        });
         
+        app.put("/times/:id", (req, res) => {
+            let index = buscarIdTimes(req.params.id);
+            times[index].nomes = req.body.nomes;
+            times[index].estado = req.body.estado;
+            times[index].titulos = req.body.titulos;
+
+            res.json(times);
+        });
