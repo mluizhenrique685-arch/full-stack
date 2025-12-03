@@ -2,9 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-
-//Indicar para express ler body com json
 app.use(express.json());
+
 
 
 
