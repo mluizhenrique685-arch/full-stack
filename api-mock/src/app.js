@@ -82,11 +82,21 @@ app.delete("/cadastros/:id", (req, res) => {
    res.send(`Cadastro com id ${req.params.id} excluida com sucesso`)
 });
 
-//criando rota para cadastrar times
+//criando rota para cadastrar cadastros
 
 app.post("/cadastros", (req, res) => {
     cadastros.push(req.body);
-    res.status(201).send("Cadastro cadastrado com sucesso");
+    res.status(201).send("Cadastro foi cadastrado com sucesso");
+});
 
-     
+app.put("/cadastros/:id", (req, res) => {
+    let index = buscarIdcadastros (req.params.id);
+    cadastros[index].nome = req.body.nome;
+    cadastros[index].telefone = req.body.telefone;
+    cadastros[index].cpf = req.body.cpf;
+    cadastros[index].email = req.body.email;
+    cadastros[index].idade = req.body.idade;
+    cadastros[index].endereco = req.body.endereco;
+
+    res.json(cadastros);
 });
