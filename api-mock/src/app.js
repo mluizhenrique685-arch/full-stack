@@ -3,6 +3,12 @@ import conexao from "../infra/conexao.js";
 
 const app = express();
 
+//indicar para express ler o body com json
+app.use(express.json());
+
+
+//rota inicial
+
 app.get("/", (req, res) => {
     res.send("Olá Copa do Mundo!");
 });
@@ -27,15 +33,36 @@ app.get('/selecoes/:id', (req, res) => {
 });
 
 // Deletando registro
-//app.delete('/selecoes/id:', (req, res) => {
-   // const id = req.params.id;
-    //const sql = "delete from selecoes where id=?;";
+app.delete('/selecoes/:id', (req, res) => {
+    const id = req.params.id;
+    const sql = "delete from selecoes where id=?;";
 
-    //conexao.query(sql, id, () => {
-      //  res.json({menssagem:"delete com sucesso"});
-    //});
+    conexao.query(sql, id, () => {
+        res.json({menssagem:"delete com sucesso"});
+    });
 
-//});
+});
 
+//creando post para cadastrar 
+app.post('/selecoes', (req, res) => {
+    const selecao = req.body;
+    const sql = "INSERT INTO selecoes SET?;";
+    
+    conexao.query(sql, selecao, () => {
+        res.json({mensagem: "Cadastrado com sucesso!"});
+    })
+});
 
+//atualizando registro 
+app.put('/selecoes/:id', (req, res) => {
+    const id = req.params.id;
+    const selecao = req.body;
+    const sql = "update selecoes set ? where id=?;";
+
+    conexao.query(sql, [selecao, id], () => {
+        res.json({mensagem: "Atualizando com sucesso!"});
+    });
+});
+
+ 
 export default app;
