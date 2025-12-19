@@ -18,4 +18,4 @@ app.use((req, res) => {
     res.status(404).json({mensagem: "Rota não encontrada"});
 });
 
-export default app;
+export default app;a
